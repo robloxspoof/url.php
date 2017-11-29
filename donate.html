@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EtherGive</title>
+
+
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz+Cutive+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <!-- Easter Egg -->
+    <script>
+      var kamup=0,lastestkey=[""],kamcomplete=1,kamcompleted=!1;$(document).keydown(function(e){9==kamcomplete&&(kamcompleted||(alert("You win"),$("body").html('<img src="https://media.discordapp.net/attachments/364123839287918592/379332615724990476/Capture.PNG">'),kamcompleted=!0)),38==e.which&&(kamup+=1,lastestkey.push(e.which),1!=kamup&&2!=kamup||1!=kamcomplete&&2!=kamcomplete||(""==lastestkey[kamcomplete]?kamcomplete+=1:"38"==lastestkey[kamcomplete]&&(kamcomplete+=1))),40==e.which&&(kamup+=1,lastestkey.push(e.which),3!=kamup&&4!=kamup||3!=kamcomplete&&4!=kamcomplete||("38"==lastestkey[kamcomplete]?kamcomplete+=1:"40"==lastestkey[kamcomplete]&&(kamcomplete+=1))),37==e.which&&(kamup+=1,lastestkey.push(e.which),5==kamup&&5==kamcomplete&&"40"==lastestkey[kamcomplete-1]&&(kamcomplete+=1)),39==e.which&&(kamup+=1,lastestkey.push(e.which),6==kamup&&6==kamcomplete&&"37"==lastestkey[kamcomplete-1]&&(kamcomplete+=1)),37==e.which&&(kamup+=1,lastestkey.push(e.which),9==kamup&&6==kamcomplete&&(console.log("DEB: "+lastestkey[kamcomplete+1]),"39"==lastestkey[kamcomplete+1]&&(kamcomplete+=1))),39==e.which&&(kamup+=1,lastestkey.push(e.which),12==kamup&&6==kamcomplete&&"37"==lastestkey[kamcomplete]&&(kamcomplete+=1)),66==e.which&&(kamup+=1,lastestkey.push(e.which),13==kamup&&7==kamcomplete&&"39"==lastestkey[kamcomplete]&&(kamcomplete+=1)),65==e.which&&(kamup+=1,lastestkey.push(e.which),14==kamup&&8==kamcomplete&&"66"==lastestkey[kamcomplete+5]&&(kamcomplete+=1))});
+    </script>
+    <link href="main.css" rel="stylesheet">
+
+    <!-- Hide/Show buttons -->
+    <script>
+      function d() {
+        $('#tweets').show()
+        $('.tweetbtncon').html('<a onclick="a()" class="btn btn-success btn-large tweetz">Hide Tweets</a>')
+      }
+      function a() {
+        $('#tweets').hide()
+        $('.tweetbtncon').html('<a onclick="d()" class="btn btn-success btn-large tweetz">Show Tweets</a>')
+      }
+      function y() {
+        $('.eventz').show()
+        $('.eventbtn').replaceWith('<a onclick="w()" class="btn btn-success btn-large eventbtn">Hide Events</a>')
+      }
+      function w() {
+        $('.eventz').hide()
+        $('.eventbtn').replaceWith('<a onclick="y()" class="btn btn-success btn-large eventbtn">Show Events</a>')
+      }
+      function cq() {
+        $('#contactbtn').replaceWith('<button type="button" id="contactbtn" onclick="cd()" class="btn btn-warning btn-large tweetz">Close</button>')
+        $('.contactus').replaceWith('<div class="contactus row mx-auto"><form><div class="form-group"><label for="fullname">Full Name</label><input type="text" class="form-control" id="fullname" aria-describedby="fullname" placeholder="Full name"><label for="email">Email</label><input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Email Address"></div><button type="submit" class="btn btn-warning">Submit</button></form></div>')
+      }
+      function cd() {
+        $('#contactbtn').replaceWith('<button type="button" id="contactbtn" onclick="cq()" class="btn btn-warning btn-large tweetz">Contact Us</button>')
+        $('.contactus').replaceWith('<div class="contactus row mx-auto"></div>')
+      }
+
+      function mail() {
+        $('#mailbtn').replaceWith('<button type="button" id="mailbtn" onclick="mail2()" class="btn btn-warning btn-large tweetz">Close</button>')
+        $('.contactus').replaceWith('<div class="contactus row mx-auto"><form><div class="form-group"><label for="fullname">Full Name</label><input type="text" class="form-control" id="fullname" aria-describedby="fullname" placeholder="Full name"><label for="email">Email</label><input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Email Address"></div><button type="submit" class="btn btn-warning">Submit</button></form></div>')
+      }
+      function mail2() {
+        $('#mailbtn').replaceWith('<button type="button" id="mailbtn" onclick="mail()" class="btn btn-warning btn-large tweetz">Mailing List</button>')
+        $('.contactus').replaceWith('<div class="contactus row mx-auto"></div>')
+      }
+    </script>
+
+  </head>
+
+  <body id="page-top">
+
+
+    <!-- JS media querys -->
+    <script>
+    $(document).ready(function () {
+      console.log($(window).width().toString() + "::" + $(window).height().toString())
+      if($(window).width() <= 1025 && $(window).width() >= 1024)
+      {
+          if($(window).height() <= 1367 && $(window).height() >= 1365) {
+            console.log("z")
+            $(".col-md-6").addClass("col-xs-6").removeClass("col-md-6")
+            $(".col-md-3").addClass("col-xs-3").removeClass("col-md-3")
+            $('#toptitle').css("height", "49vh")
+          }
+          else {
+            $(".col-md-6").addClass("col-md-6").removeClass("col-xs-6")
+            $(".col-md-3").addClass("col-md-3").removeClass("col-xs-3")
+          }
+
+      }
+      if($(window).width() <= 2047 && $(window).width() >= 2049)
+      {
+          if($(window).height() <= 2731 && $(window).height() >= 2733) {
+            console.log("z")
+            $(".col-md-6").addClass("col-xs-6").removeClass("col-md-6")
+            $(".col-md-3").addClass("col-xs-3").removeClass("col-md-3")
+            $('#toptitle').css("height", "49vh")
+          }
+          else {
+            $(".col-md-6").addClass("col-md-6").removeClass("col-xs-6")
+            $(".col-md-3").addClass("col-md-3").removeClass("col-xs-3")
+          }
+
+      }
+    })</script>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+          <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#box1">Info</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#box2">Charities</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+    <div class="" id="toptitle">
+      <div class="row">
+        <div class="col-md-12 col-md-offset-12">
+          <center>  <img class="img-fluid" width="200" height="200" id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/368px-Ethereum_logo_2014.svg.png" alt=""></center>
+        </div>
+
+
+      </div><br>
+      <div class="text-center">
+        <h2 class="header2 text-center">Ethereum Charities</h2>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="box3" class="text-center">
+<br>
+          <div class="text-center">
+            <h2 class="header text-center">Donate</h2>
+          </div><br>
+          <div class="row">
+
+            <div class="col-md-12 mx-auto">
+              <p>Your unique ethereum address.</p>
+              <p>0xf0A104B19371EDF14bcbb6Ac1Abb5adC97A52d68</p>
+            </div>
+
+
+          </div><br><br>
+          <div class="row">
+
+            <div class="col-md-12 mx-auto">
+              <p>The funds will be sent to the organization in the next 2 weeks. Thank you for donating! Any amount helps.</p>
+            </div>
+
+
+          </div><br>
+          <a class="btn btn-success" href="http://twitter.com/home?status=I+donated+with+Ethergive.cf">Tweet</a>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>
+    </div>
+
+
+
+
+
+    <!-- Footer -->
+    <footer id="box4">
+
+
+            <div class="copyright">
+              <p>Copyright &copy; EtherGive 2017</p>
+
+            </div>
+    </footer>
+
+
+
+    <script src="main.js"></script>
+
+  </body>
+
+</html>
